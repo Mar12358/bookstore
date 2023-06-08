@@ -9,7 +9,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Math Magicians ](#-math-magicians-)
+- [📖 Bookstore ](#-math-magicians-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -29,9 +29,9 @@
   - [📝 License ](#-license-)
 
 
-# 📖 Math Magicians <a name="about-project"></a>
+# 📖 Bookstore <a name="about-project"></a>
 
-This is a Calculator Project built with React components. First block of module 3 at Microverse.
+This is a Bookstore App Project built with React. Second block of module 3 at Microverse.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -78,7 +78,7 @@ This is a Calculator Project built with React components. First block of module 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 Coming Soon...
-<!-- Try it with <a href="https://mar12358.github.io/math-magicians/">gh-pages</a> -->
+<!-- Try it with <a href="https://mar12358.github.io/bookstore/">gh-pages</a> -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,11 +103,11 @@ Coming Soon...
 
 To clone this repository to your local machine, open a terminal and select desired folder:
 ```sh
-  cd math-magicians
+  cd bookstore
 ```
 Clone:
 ```sh
-  git clone https://github.com/Mar12358/math-magicians.git
+  git clone https://github.com/Mar12358/bookstore.git
 ```
 
 
@@ -123,7 +123,6 @@ Clone:
 
 
  ```sh
-  npm install
   npm start
 ```
 

@@ -9,7 +9,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Bookstore ](#-math-magicians-)
+- [📖 Bookstore ](#-bookstore-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -69,7 +69,7 @@ This is a Bookstore App Project built with React. Second block of module 3 at Mi
 ### Key Features <a name="key-features"></a>
 
 - **Create React App**
-- **Routing with react**
+- **Usage of React Router**
 - **SPA**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -150,8 +150,8 @@ Clone:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Improve Style**
-- **Testing**
+- **Style**
+- **Implementation inside components**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

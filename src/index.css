@@ -94,3 +94,9 @@ ul li:not(:last-child) {
   align-items: center;
   justify-content: space-around;
 }
+
+.book-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}

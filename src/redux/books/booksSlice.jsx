@@ -36,7 +36,7 @@ const booksSlice = createSlice({
         category: "Category"
       })
     },
-    remove: (state) => {
+    remove: (state, action) => {
       remove(state)
     },
   }

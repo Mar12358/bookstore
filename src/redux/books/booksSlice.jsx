@@ -28,6 +28,19 @@ const initialState = {
 const booksSlice = createSlice({
   name: 'books',
   initialState,
+  reducers: {
+    add: (state) => {
+      state.books.push({
+        id: "New id",
+        titlle: "New Title",
+        category: "Category"
+      })
+    },
+    remove: (state) => {
+      remove(state)
+    },
+  }
 });
 
+export const { add, remove } = booksSlice.actions;
 export default booksSlice.reducer;

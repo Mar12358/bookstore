@@ -1,4 +1,8 @@
+import { useDispatch } from 'react-redux';
+import { add } from '../redux/books/booksSlice';
+
 const BookFormCreator = () => {
+  const dispatch = useDispatch;
   return (
     <form>
       <input type="text" name="title" placeholder="Book title" />
@@ -8,7 +12,7 @@ const BookFormCreator = () => {
         <option value="sci-fi">Science Fiction</option>
         <option value="fantasy">Fantasy</option>
       </select>
-      <button type="button" name="add"> Add </button>
+      <button type="button" name="add" onClick={() => dispatch(add())}> Add </button>
     </form>
   );
 };

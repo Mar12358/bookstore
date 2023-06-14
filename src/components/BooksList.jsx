@@ -1,28 +1,8 @@
 import BookItem from "./BookItem";
+import { useSelector } from 'react-redux';
 
 const BooksList = () => {
-  const books = [
-    {
-      id: "1",
-      title: "Book 1",
-      category: "Fiction"
-    },
-    {
-      id: "2",
-      title: "Book 2",
-      category: "Non-fiction"
-    },
-    {
-      id: "3",
-      title: "Book 3",
-      category: "Science Fiction"
-    },
-    {
-      id: "4",
-      title: "Book 4",
-      category: "Fantasy"
-    }
-  ];
+  const { books } = useSelector((state) => state.books);
   return (
     <>
       {books.map((book) => (

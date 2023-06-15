@@ -3,12 +3,15 @@ import { useDispatch } from 'react-redux';
 import { remove } from '../redux/books/booksSlice';
 
 const BookItem = ({ book }) => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   return (
     <div className="book-item">
       <h3>{book.title}</h3>
       <p>{book.category}</p>
-      <button onClick={() => dispatch(remove())}>Remove</button>
+      <button onClick={() => {
+        const id = book.id
+        dispatch(remove({ id }))
+        }}>Remove</button>
     </div>
   );
 };

@@ -3,24 +3,22 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   books: [
     {
-      id: "1",
-      title: "Book 1",
+      id: "item1",
+      title: "The Great Gatsby",
+      author: "John Smith",
       category: "Fiction"
     },
     {
-      id: "2",
-      title: "Book 2",
-      category: "Non-fiction"
+      id: "item2",
+      title: "Anna Karenina",
+      author: "Leo Tolstoy",
+      category: "Fiction"
     },
     {
-      id: "3",
-      title: "Book 3",
-      category: "Science Fiction"
-    },
-    {
-      id: "4",
-      title: "Book 4",
-      category: "Fantasy"
+      id: "item3",
+      title: "The Selfish Gene",
+      author: "Richard Dawkins",
+      category: "Nonfiction"
     }
   ],
 }
@@ -36,7 +34,7 @@ const booksSlice = createSlice({
         category: "Category"
       })
     },
-    remove: (state, action) => {
+    remove: (state) => {
       remove(state)
     },
   }

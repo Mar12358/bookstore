@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../redux/books/booksSlice';
- import { useState } from 'react';
+import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { postBook } from '../redux/books/booksSlice';
 
 const BookFormCreator = () => {
   const dispatch = useDispatch();
@@ -23,17 +25,23 @@ const BookFormCreator = () => {
     setCategory(e.target.value); // updates caregory state when selection changes
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setId((books.length + 1).toString());
-    console.log(title, category);
-    dispatch(add({ id, title, author, category })); // call "add" action passin title and category as argument
+    if (!title || !author || !category) return;
+    try {
+      dispatch(postBook({ title, author, category })); // call "add" action passin title and category as argument
+      setTitle('');
+      setAuthor('');
+      setCategory('');
+    } catch (err) {console.log(err)}
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" name="title" placeholder="Book title" value={title} onChange={handleTitleChange}/>
       <input type="text" name="author" placeholder="Book author" value={author} onChange={handleAuthorChange}/>
       <select name="category" placeholder="Category" value={category} onChange={handleCategoryChange}>
+      <option value=""></option>
         <option value="fiction">Fiction</option>
         <option value="non-fiction">Non-fiction</option>
         <option value="sci-fi">Science Fiction</option>

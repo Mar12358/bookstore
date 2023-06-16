@@ -9,7 +9,7 @@ const BookItem = ({ book }) => {
       <h3>{book.title}</h3>
       <p>{book.category}</p>
       <button onClick={() => {
-        const id = book.id
+        const id = book.item_id
         dispatch(remove({ id }))
         }}>Remove</button>
     </div>
@@ -17,8 +17,9 @@ const BookItem = ({ book }) => {
 };
 BookItem.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
 };

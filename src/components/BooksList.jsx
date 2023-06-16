@@ -13,7 +13,7 @@ const BooksList = () => {
   return (
     <>
       {Object.keys(books).map((id) => (
-        <BookItem key={id} book={books[id][0]} />
+        <BookItem key={id} book={{...books[id][0], id: id}} />
       ))}
     </>
   );

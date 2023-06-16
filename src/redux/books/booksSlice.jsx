@@ -4,27 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 const getBooksURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/rdEZy48wnbkIXfhABIXi/books';
 const addBookURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/rdEZy48wnbkIXfhABIXi/books';
+const removeBookURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/rdEZy48wnbkIXfhABIXi/books'
+
 const initialState = {
-  books: [
-    /* {
-      id: "item1",
-      title: "The Great Gatsby",
-      author: "John Smith",
-      category: "Fiction"
-    },
-    {
-      id: "item2",
-      title: "Anna Karenina",
-      author: "Leo Tolstoy",
-      category: "Fiction"
-    },
-    {
-      id: "item3",
-      title: "The Selfish Gene",
-      author: "Richard Dawkins",
-      category: "Nonfiction"
-    } */
-  ],
+  books: [],
 }
 
 export const getBooks = createAsyncThunk('books/getBooks', async (thunkAPI) => {
@@ -53,33 +36,50 @@ export const postBook = createAsyncThunk('books/addBook', async (book, thunkAPI)
   }
 });
 
+export const removeBook = createAsyncThunk('books/removeBook', async (bookId, thunkAPI) => {
+  try {
+    const response = await axios.delete(`${removeBookURL}/${bookId.id}`);
+    return response.data;
+    
+  } catch (error) {
+    console.log(error);
+    return thunkAPI.rejectWithValue('something went wrong');
+  }
+});
+
 const booksSlice = createSlice({
   name: 'books',
   initialState,
   extraReducers: (builder) => {builder
      .addCase(getBooks.pending, (state) => {
-      state.isLoading = true;
+      state.isLoading = true;      
     })
     .addCase(getBooks.fulfilled, (state, action) => {
       state.isLoading = false;
       state.books = action.payload;
     })
     .addCase(getBooks.rejected, (state) => {
-     // console.log(action);
       state.isLoading = false;
     }) 
      .addCase(postBook.pending, (state) => {
       state.isLoading = true;
     }) 
-     .addCase(postBook.fulfilled, (state, action) => {
+     .addCase(postBook.fulfilled, (state) => {
       state.isLoading = false;
-      //console.log(action.meta.arg)
-      state.books.push(action.meta.arg)
     }) 
      .addCase(postBook.rejected, (state) => {
-//      console.log(action);
       state.isLoading = false;
     }) 
+    .addCase(removeBook.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(removeBook.fulfilled, (state) => {
+       state.isLoading = false;
+    })
+    .addCase(removeBook.rejected, (state, action) => {
+      console.log(action);
+      state.isLoading = false;
+    });
   },
 });
 

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { remove } from '../redux/books/booksSlice';
+import { removeBook } from '../redux/books/booksSlice';
 
 const BookItem = ({ book }) => {
   const dispatch = useDispatch();
@@ -9,16 +9,18 @@ const BookItem = ({ book }) => {
       <h3>{book.title}</h3>
       <p>{book.category}</p>
       <button onClick={() => {
-        const id = book.id
-        dispatch(remove({ id }))
+        const id = book.id;
+        dispatch(removeBook({ id }));
         }}>Remove</button>
     </div>
   );
 };
 BookItem.propTypes = {
+  
   book: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
 };

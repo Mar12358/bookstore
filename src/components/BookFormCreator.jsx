@@ -1,16 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { add } from '../redux/books/booksSlice';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { postBook } from '../redux/books/booksSlice';
 
 const BookFormCreator = () => {
   const dispatch = useDispatch();
-  const [id, setId] = useState('');
   const [title, setTitle] = useState(''); // update state to see title
   const [author, setAuthor] = useState(''); // update state to see author
   const [category, setCategory] = useState(''); // state for category value
-  const books = useSelector(state => state.books.books);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value); // update title state when input changes

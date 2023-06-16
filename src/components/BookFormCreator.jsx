@@ -11,7 +11,6 @@ const BookFormCreator = () => {
   const [author, setAuthor] = useState(''); // update state to see author
   const [category, setCategory] = useState(''); // state for category value
   const books = useSelector(state => state.books.books);
-  console.log(books)
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value); // update title state when input changes

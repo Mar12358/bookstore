@@ -4,6 +4,8 @@ import { remove } from '../redux/books/booksSlice';
 
 const BookItem = ({ book }) => {
   const dispatch = useDispatch();
+  // Object.keys(book).map((id) => {console.log(book, "asdasda")})
+ 
   return (
     <div className="book-item">
       <h3>{book.title}</h3>

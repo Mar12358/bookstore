@@ -27,6 +27,16 @@ const initialState = {
   ],
 }
 
+export const getBooks = createAsyncThunk('books/getBooks', async (thunkAPI) => {
+  try {
+    const response = await axios(getBooksURL);
+    return response.data;
+  } catch (err) {
+    console.log(err);
+    return thunkAPI.rejectWithVAlue('something went wrong');
+  }
+});
+
 export const postBook = createAsyncThunk('books/addBook', async (book, thunkAPI) => {
   const bookObj = {
     item_id: uuidv4(),
@@ -34,7 +44,6 @@ export const postBook = createAsyncThunk('books/addBook', async (book, thunkAPI)
     author: book.author,
     category: book.category,
   };
-  console.log(bookObj);
   try {
     const response = await axios.post(addBookURL, bookObj);
     return response.data;
@@ -48,11 +57,22 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   extraReducers: (builder) => {builder
+     .addCase(getBooks.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(getBooks.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.books = action.payload;
+    })
+    .addCase(getBooks.rejected, (state) => {
+     // console.log(action);
+      state.isLoading = false;
+    }) 
      .addCase(postBook.pending, (state) => {
       state.isLoading = true;
     }) 
      .addCase(postBook.fulfilled, (state, action) => {
-      state.isLoading = true;
+      state.isLoading = false;
       //console.log(action.meta.arg)
       state.books.push(action.meta.arg)
     }) 

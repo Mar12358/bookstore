@@ -44,7 +44,7 @@ const BookFormCreator = () => {
           <option value="Sci-Fi">Science Fiction</option>
           <option value="Fantasy">Fantasy</option>
         </select>
-        <button className="add-btn" type="submit" name="add"> Add book </button>
+        <button className="add-btn" type="submit" name="add"> ADD BOOK </button>
       </form>
     </div>
   );

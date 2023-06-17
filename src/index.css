@@ -161,10 +161,6 @@ select {
   width: 15vw;
 }
 
-.add-btn {
-  width: 11.5vw;
-}
-
 input,
 select,
 .add-btn {
@@ -221,7 +217,8 @@ select,
 
 .current-chapter,
 .chapter,
-.btn-update-progress {
+.btn-update-progress,
+.add-btn {
   font-family: 'Roboto Slab', serif;
 }
 
@@ -242,6 +239,12 @@ select,
   padding: 0.7rem;
   border-radius: 0.3rem;
   font-weight: 300;
+  font-size: 0.813rem;
+}
+
+.add-btn {
+  width: 11.5vw;
+  font-weight: 400;
 }
 
 input::placeholder {

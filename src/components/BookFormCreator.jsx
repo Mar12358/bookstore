@@ -32,18 +32,21 @@ const BookFormCreator = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="title" placeholder="Book title" value={title} onChange={handleTitleChange}/>
-      <input type="text" name="author" placeholder="Book author" value={author} onChange={handleAuthorChange}/>
-      <select name="category" placeholder="Category" value={category} onChange={handleCategoryChange}>
-      <option value=""></option>
-        <option value="fiction">Fiction</option>
-        <option value="non-fiction">Non-fiction</option>
-        <option value="sci-fi">Science Fiction</option>
-        <option value="fantasy">Fantasy</option>
-      </select>
-      <button type="submit" name="add"> Add </button>
-    </form>
+    <div className="form">
+      <p className="add-new-book">ADD NEW BOOK</p>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="title" placeholder="Book title" value={title} onChange={handleTitleChange}/>
+        <input type="text" name="author" placeholder="Book author" value={author} onChange={handleAuthorChange}/>
+        <select name="category" placeholder="Category" value={category} onChange={handleCategoryChange}>
+        <option value=""></option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-fiction</option>
+          <option value="sci-fi">Science Fiction</option>
+          <option value="fantasy">Fantasy</option>
+        </select>
+        <button className="add-btn" type="submit" name="add"> Add book </button>
+      </form>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { CgProfile } from 'react-icons/cg';
 
 const links = [
   { path: '/', text: 'Home' },
@@ -6,15 +7,18 @@ const links = [
   { path: '/categories', text: 'Categories' },
 ];
 const Navbar = () => (
-  <nav className="navbar">
-    <h1>Bookstore CMS</h1>
-    <ul>
-      {links.map((link) => (
-        <li key={link.text}>
-          <NavLink to={link.path}>{link.text}</NavLink>
-        </li>
-      ))}
-    </ul>
+  <nav className="navbar-wrapper">
+    <div className="navbar">
+      <h1>Bookstore CMS</h1>
+      <ul>
+        {links.map((link) => (
+          <li key={link.text}>
+            <NavLink to={link.path}>{link.text}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <CgProfile className="icon" />
   </nav>
 );
 export default Navbar;

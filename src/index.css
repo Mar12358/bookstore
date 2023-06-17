@@ -1,83 +1,89 @@
 * {
-  padding:0;
-  margin:0 ;
+  padding: 0;
+  margin: 0;
   list-style-type: none;
+}
 
-}
 body {
-  background-color: rgb(236, 236, 236)
+  background-color: rgb(236, 236, 236);
 }
+
 #root {
   padding: 10% 7% 10% 7%;
 }
+
 .wrapper {
-  background-color: rgb(248, 245, 245)
+  background-color: rgb(248, 245, 245);
 }
+
 h1 {
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Courier New', Courier, monospace;
 }
+
 .navbar {
   padding: 1.5vw 5vw 1.5vw 5vw;
-  
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgb(236, 236, 236);
   background-color: white;
   gap: 3vw;
 }
+
 nav ul {
   display: flex;
   gap: 2vw;
 }
+
 .book-item {
-  margin: 0 5vw 0 5vw ;
+  margin: 0 5vw 0 5vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: white;
   border: 1px solid rgb(236, 236, 236);
-  
 }
+
 .book-info {
   padding: 3vw 2vw 3vw 2vw;
 }
+
 .link-btn {
   background: none;
   border: none;
   color: rgb(129, 129, 253);
 }
+
 .buttons {
   display: flex;
-  
   align-items: center;
 }
-.buttons > *:not(:last-child)  {
+
+.buttons > *:not(:last-child) {
   padding-right: 1.2vw;
   border-right: 1px solid rgb(206, 206, 206);
-  
 }
-.buttons > *:not(:first-child)  {
+
+.buttons > *:not(:first-child) {
   padding-left: 1.2vw;
 }
 
 .complete-progress-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
 }
+
 .circle {
   width: 6vw;
   display: flex;
-
 }
+
 .percent-completed {
   display: flex;
   flex-direction: column;
-  
   justify-content: center;
-
 }
+
 .chapter-info {
-  position: relative; /* assure the element is relative*/
+  position: relative; /* assure the element is relative */
   padding-left: 4vw;
   display: flex;
   flex-direction: column;
@@ -89,7 +95,7 @@ nav ul {
   position: absolute;
   top: 50%; /* center the pseudo-element vertically */
   left: 0;
-  height: 50%; 
+  height: 50%;
   border-left: 1px solid rgb(206, 206, 206);
   transform: translateY(-50%); /* adjust la position vertically */
 }
@@ -102,16 +108,17 @@ nav ul {
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  padding:  2vw 0 2vw 0;
+  padding: 2vw 0 2vw 0;
 }
 
 .form {
-  padding-top: 2vw ;
+  padding-top: 2vw;
   border-top: 1px solid rgb(206, 206, 206);
   margin: 0 5vw 0 5vw;
 }
+
 .add-new-book {
-  padding-bottom: 1.5vw  ;
+  padding-bottom: 1.5vw;
 }
 
 form {
@@ -119,15 +126,15 @@ form {
   justify-content: space-between;
 }
 
-
 input,
 select {
-  border: 1px solid rgb(206, 206, 206);;
+  border: 1px solid rgb(206, 206, 206);
 }
 
 input {
   width: 22vw;
 }
+
 select {
   width: 15vw;
 }

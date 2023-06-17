@@ -21,10 +21,8 @@ h1 {
 }
 
 .navbar {
-  
   display: flex;
   align-items: center;
-  
   gap: 3vw;
 }
 
@@ -41,7 +39,6 @@ h1 {
   align-items: center;
   justify-content: space-between;
 }
-
 
 .book-item {
   margin: 0 5vw 0 5vw;

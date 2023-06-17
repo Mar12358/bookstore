@@ -38,7 +38,7 @@ const BookFormCreator = () => {
         <input type="text" name="title" placeholder="Book title" value={title} onChange={handleTitleChange}/>
         <input type="text" name="author" placeholder="Book author" value={author} onChange={handleAuthorChange}/>
         <select name="category" placeholder="Category" value={category} onChange={handleCategoryChange}>
-        <option value=""></option>
+          <option value="" disabled selected hidden>Category</option>
           <option value="Fiction">Fiction</option>
           <option value="Non-Fiction">Non-fiction</option>
           <option value="Sci-Fi">Science Fiction</option>

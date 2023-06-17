@@ -63,13 +63,15 @@ li a.active {
 }
 
 .book-info {
-  padding: 3vw 2vw 3vw 2vw;
+  padding: 3vw 2vw 2vw 2vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .link-btn {
   background: none;
   border: none;
-  color: rgb(129, 129, 253);
+  color: #4386bf;
 }
 
 .buttons {
@@ -138,9 +140,7 @@ li a.active {
   margin: 0 5vw 0 5vw;
 }
 
-.add-new-book {
-  padding-bottom: 1.5vw;
-}
+
 
 form {
   display: flex;
@@ -179,14 +179,39 @@ select,
   height: 2.313rem;
   color: #0090ff;
 }
-
-.category {
+.category,
+.completed  {
   color: #969696;
+  
+  
+}
+.category {
   font-weight: 800;
-  font-size: 0.85rem;
+}
+
+.category,
+.author,
+.completed {
+  
+  font-size: 0.875rem;
 }
 .title {
   color: #121212;
   font-family: 'Roboto Slab', serif;
   font-size: 1.35rem;
+  font-weight: 900;
+}
+.author {
+  color: #4386bf;
+  padding-bottom: 1rem;
+}
+.percent {
+  color:#121212;
+  font-size: 2rem;
+}
+
+.add-new-book {
+  padding-bottom: 1.5vw;
+  color: #888888;
+  font-weight: 700;
 }

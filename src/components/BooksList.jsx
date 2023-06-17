@@ -10,10 +10,11 @@ const BooksList = () => {
   },[dispatch]);
   
   const { books } = useSelector((state) => state.books);
+  
   return (
     <>
-      {Object.keys(books).map((id) => (
-        <BookItem key={id} book={{...books[id][0], id: id}} />
+      {books.map((book) => (
+        <BookItem key={book.item_id} book={book} />
       ))}
     </>
   );

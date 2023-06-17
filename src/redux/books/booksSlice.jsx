@@ -29,7 +29,7 @@ export const postBook = createAsyncThunk('books/addBook', async (book, thunkAPI)
   };
   try {
     const response = await axios.post(addBookURL, bookObj);
-    return response.data;
+    return [response.data, bookObj.item_id];
   } catch (error) {
     console.log(error);
     return thunkAPI.rejectWithValue('something went wrong');
@@ -56,7 +56,12 @@ const booksSlice = createSlice({
     })
     .addCase(getBooks.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.books = action.payload;
+      state.books = Object.keys(action.payload).map(
+        (id) => ({
+          item_id: id, 
+          ...action.payload[id],
+        })
+      )
     })
     .addCase(getBooks.rejected, (state) => {
       state.isLoading = false;
@@ -64,8 +69,9 @@ const booksSlice = createSlice({
      .addCase(postBook.pending, (state) => {
       state.isLoading = true;
     }) 
-     .addCase(postBook.fulfilled, (state) => {
+     .addCase(postBook.fulfilled, (state, action) => {
       state.isLoading = false;
+      state.books = [...state.books,  {0: action.meta.arg, item_id: action.payload[1]}];
     }) 
      .addCase(postBook.rejected, (state) => {
       state.isLoading = false;
@@ -73,8 +79,10 @@ const booksSlice = createSlice({
     .addCase(removeBook.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(removeBook.fulfilled, (state) => {
-       state.isLoading = false;
+    .addCase(removeBook.fulfilled, (state, action) => {
+      state.isLoading = false;
+      const movieId = action.meta.arg.id;
+      state.books =state.books.filter((movie) =>  movie.item_id  !== movieId  );
     })
     .addCase(removeBook.rejected, (state, action) => {
       console.log(action);

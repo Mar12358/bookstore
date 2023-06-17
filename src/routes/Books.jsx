@@ -1,9 +1,10 @@
 import BookFormCreator from '../components/BookFormCreator';
 import BooksList from '../components/BooksList';
 const Books = () => (
-  <div className="text-wraper">
-    
-    <BooksList />
+  <div className="book-form-wrapper">
+    <div className="books-wrapper">
+      <BooksList />
+    </div>
     <BookFormCreator />
   </div>
 );

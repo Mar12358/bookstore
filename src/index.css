@@ -8,9 +8,6 @@
   font-family: Montserrat, serif;
 }
 
-.wrapper {
-  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
-}
 body {
   background-color: #f5f6fa;
 }
@@ -20,6 +17,7 @@ body {
 }
 
 .wrapper {
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
   background-color: #fafafa;
   color: #0290ff;
 }
@@ -112,11 +110,10 @@ li a.active {
 
 .chapter-info {
   position: relative; /* assure the element is relative */
-  padding-left: 4vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 2vw 0.5vw 1.5vw 3vw;
+  padding: 2vw 0.5vw 1.5vw 4vw;
 }
 
 .chapter-info::before {
@@ -142,9 +139,7 @@ li a.active {
 
 .form {
   padding-top: 2vw;
-  border-top: 1px solid #e8e8e8
-
-  ;
+  border-top: 1px solid #e8e8e8;
   margin: 0 5vw 0 5vw;
 }
 
@@ -223,16 +218,18 @@ select,
   color: #888;
   font-weight: 700;
 }
+
 .current-chapter,
 .chapter,
 .btn-update-progress {
   font-family: 'Roboto Slab', serif;
-
 }
+
 .current-chapter {
   color: #a1a1a1;
   font-size: 0.813rem;
 }
+
 .chapter {
   color: #121212;
 }
@@ -240,12 +237,13 @@ select,
 .btn-update-progress,
 .add-btn {
   background-color: #0290ff;
-  color: #ffffff;
+  color: #fff;
   border: none;
   padding: 0.7rem;
   border-radius: 0.3rem;
   font-weight: 300;
 }
+
 input::placeholder {
-  padding-left: 10px; 
+  padding-left: 10px;
 }

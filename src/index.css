@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap');
 * {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  font-family: Montserrat;
 }
 
 body {
@@ -14,12 +17,23 @@ body {
 
 .wrapper {
   background-color: rgb(248, 245, 245);
+  color: #0290ff;
 }
 
 h1 {
-  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+  font-size: 2rem;
+}
+li a {
+  font-size: 0.75rem;
+  color: #a1a1a1; 
+  text-decoration: none;
 }
 
+
+li a.active {
+  color: #121212
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -78,8 +92,9 @@ h1 {
 }
 
 .circle {
+  margin-left: 1vw;
   width: 6vw;
-  display: flex;
+  display: flex;  
 }
 
 .percent-completed {
@@ -163,4 +178,15 @@ select,
   width: auto;
   height: 2.313rem;
   color: #0090ff;
+}
+
+.category {
+  color: #969696;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.title {
+  color: #121212;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.35rem;
 }
